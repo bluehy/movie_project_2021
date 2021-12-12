@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
 const Movie = ({
-  key,
+  // key,
   id,
   coverImg,
   title,
@@ -12,7 +12,7 @@ const Movie = ({
   genres,
 }) => {
   return (
-    <div key={key} style={{ listStyle: "none" }}>
+    <div key={id} style={{ listStyle: "none" }}>
       <img alt={title} src={`${coverImg}`} />
       <h3>
         <Link to={`/movie/${id}`}>{title_long}</Link>
@@ -34,7 +34,7 @@ Movie.propTypes = {
   title_long: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   summary: PropTypes.string.isRequired,
-  genre: PropTypes.arrayOf(PropTypes.string).isRequired,
+  genres: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Movie;
